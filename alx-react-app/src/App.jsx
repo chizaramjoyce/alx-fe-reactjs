@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <UserProfile name="Uzogo Onyinyechi" age={25} bio="Loves yoghurt drink" />
+      <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
       <MainContent />
       <Footer />
     </>
