@@ -4,7 +4,7 @@ function Navbar() {
     return (
         <header>
             <nav>
-                <ul>
+                <ul style={{ backgroundColor: 'transparent', display: 'flex', listStyleType: 'none', gap: '16px', justifyContent: 'center', alignItems: 'center' }}>
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
