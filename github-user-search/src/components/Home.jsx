@@ -2,11 +2,6 @@ import React from "react";
 import Search from "./Search";
 
 const Home = () => {
-  const handleSearch = (username) => {
-    // TODO: Implement search logic (e.g., call API, show results)
-    alert(`Searching for: ${username}`);
-  };
-
   return (
     <div>
       <section className="flex flex-col items-center justify-center min-h-[60vh] bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl shadow-lg mx-auto max-w-2xl p-8">
@@ -14,7 +9,7 @@ const Home = () => {
         <p className="text-lg text-gray-800 mb-6 text-center max-w-md font-sans">
           Welcome to the GitHub User Search App! Enter a username to find GitHub profiles and view their details.
         </p>
-        <Search onSearch={handleSearch} />
+        <Search />
       </section>
     </div>
   );
