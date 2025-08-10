@@ -6,14 +6,10 @@ export const useRecipeStore = create(set => ({
   setRecipes: (recipes) => set({ recipes }),
   updateRecipe: (updatedRecipe) => set(state => ({
     recipes: state.recipes.map(recipe =>
-      recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+      recipe.id.toString() === updatedRecipe.id.toString() ? updatedRecipe : recipe
     )
   })),
   deleteRecipe: (recipeId) => set(state => ({
     recipes: state.recipes.filter(recipe => recipe.id.toString() !== recipeId.toString())
   })),
-  getRecipeById: (id) => {
-    const state = useRecipeStore.getState();
-    return state.recipes.find(recipe => String(recipe.id) === String(id));
-  },
 }));

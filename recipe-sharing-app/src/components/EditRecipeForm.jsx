@@ -5,7 +5,8 @@ import { useRecipeStore } from './recipeStore';
 const EditRecipeForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const recipe = useRecipeStore(state => state.getRecipeById(id));
+  const recipes = useRecipeStore(state => state.recipes);
+  const recipe = recipes.find(recipe => recipe.id.toString() === id);
   const updateRecipe = useRecipeStore(state => state.updateRecipe);
 
   const [form, setForm] = useState({
@@ -23,7 +24,10 @@ const EditRecipeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateRecipe(id, form);
+    updateRecipe({
+      id: recipe.id,
+      ...form,
+    });
     navigate(`/recipe/${id}`);
   };
 
