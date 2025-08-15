@@ -25,7 +25,15 @@ function HomePage() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 text-gray-800">Recipe Sharing Platform</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 md:mb-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-0">Recipe Sharing Platform</h1>
+        <Link
+          to="/add-recipe"
+          className="px-6 py-3 bg-blue-600 text-white text-sm sm:text-base font-medium rounded-md shadow-sm hover:bg-blue-700 transform transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          Add New Recipe
+        </Link>
+      </div>
       {loading ? (
         <p className="text-center text-base sm:text-lg md:text-xl text-gray-600">Loading...</p>
       ) : (
