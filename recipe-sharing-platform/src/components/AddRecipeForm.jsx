@@ -251,7 +251,7 @@ function AddRecipeForm() {
         {/* Instructions Section */}
         <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 space-y-4">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Instructions</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Steps</h2>
             <button
               type="button"
               onClick={() => addArrayItem('instructions')}
