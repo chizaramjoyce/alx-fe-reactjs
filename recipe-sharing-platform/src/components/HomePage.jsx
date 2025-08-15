@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const loadRecipes = async () => {
     try {
@@ -38,7 +40,10 @@ function HomePage() {
               <div className="p-3 sm:p-4 md:p-6">
                 <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3 transition-colors duration-200 hover:text-blue-600">{recipe.title}</h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 line-clamp-3">{recipe.summary}</p>
-                <button className="w-full sm:w-auto mt-3 sm:mt-4 md:mt-6 px-4 py-2 sm:py-2.5 md:py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg rounded transform transition-all duration-200 hover:bg-blue-700 hover:shadow-lg hover:scale-105 active:scale-95">
+                <button 
+                  onClick={() => navigate(`/recipe/${recipe.id}`)}
+                  className="w-full sm:w-auto mt-3 sm:mt-4 md:mt-6 px-4 py-2 sm:py-2.5 md:py-3 bg-blue-600 text-white text-sm sm:text-base md:text-lg rounded transform transition-all duration-200 hover:bg-blue-700 hover:shadow-lg hover:scale-105 active:scale-95"
+                >
                   View Recipe
                 </button>
               </div>

@@ -1,20 +1,104 @@
 [
   {
     "id": 1,
-    "title": "Spaghetti Carbonara",
-    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://placehold.co/400"
+    "title": "Classic Spaghetti Carbonara",
+    "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "summary": "A creamy Italian pasta dish made with eggs, cheese, pancetta, and black pepper.",
+    "category": "Italian Main Course",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 4,
+    "description": "Spaghetti Carbonara is a classic Roman pasta dish known for its rich, creamy sauce made without cream. The sauce is created from a mixture of eggs, hard cheese, pepper, and the starchy pasta water, with crispy bits of pancetta adding a delicious savory element. This dish perfectly embodies the beauty of Italian cuisine - simple ingredients transformed into something extraordinary.",
+    "ingredients": [
+      "400g spaghetti",
+      "200g pancetta or guanciale, diced",
+      "4 large eggs (room temperature)",
+      "100g Pecorino Romano cheese, freshly grated",
+      "100g Parmigiano Reggiano, freshly grated",
+      "2 cloves garlic, lightly crushed (optional)",
+      "2 tablespoons extra virgin olive oil",
+      "Fresh black pepper, to taste",
+      "Sea salt, to taste"
+    ],
+    "instructions": [
+      "Bring a large pot of salted water to boil for the pasta",
+      "While water is heating, whisk together eggs, grated cheeses, and plenty of black pepper in a bowl",
+      "In a large skillet, cook pancetta over medium heat until crispy and fat has rendered, about 7-8 minutes",
+      "Cook spaghetti in the boiling water according to package instructions until al dente",
+      "Reserve 1 cup of pasta cooking water before draining the pasta",
+      "Working quickly, add hot pasta to the skillet with pancetta, tossing to combine",
+      "Remove from heat and quickly stir in the egg and cheese mixture, tossing constantly",
+      "Add pasta water as needed to create a creamy sauce",
+      "Serve immediately with extra grated cheese and black pepper"
+    ]
   },
   {
     "id": 2,
-    "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://placehold.co/400"
+    "title": "Mediterranean Grilled Salmon",
+    "image": "https://images.unsplash.com/photo-1485921325833-c519f76c4927?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "summary": "Fresh salmon fillets with Mediterranean herbs and lemon, perfect for a healthy dinner.",
+    "category": "Seafood",
+    "prepTime": "10 mins",
+    "cookTime": "15 mins",
+    "servings": 4,
+    "description": "This Mediterranean-style grilled salmon is a perfect blend of healthy and delicious. The fish is marinated in a mixture of fresh herbs, lemon, and olive oil, then grilled to perfection. The result is a moist, flaky salmon with a wonderful herb-citrus flavor that is both light and satisfying. It is an excellent source of omega-3 fatty acids and protein, making it a healthy choice for any meal.",
+    "ingredients": [
+      "4 salmon fillets (6 oz each)",
+      "4 tablespoons extra virgin olive oil",
+      "2 lemons (1 for juice, 1 for serving)",
+      "4 cloves garlic, minced",
+      "2 tablespoons fresh oregano, chopped",
+      "2 tablespoons fresh thyme, chopped",
+      "1 tablespoon fresh rosemary, chopped",
+      "1 teaspoon sea salt",
+      "1/2 teaspoon black pepper",
+      "Fresh parsley for garnish"
+    ],
+    "instructions": [
+      "In a bowl, mix olive oil, juice of 1 lemon, minced garlic, oregano, thyme, rosemary, salt, and pepper",
+      "Place salmon fillets in a shallow dish and pour the marinade over them",
+      "Let marinate for 30 minutes at room temperature",
+      "Preheat your grill to medium-high heat (around 375°F/190°C)",
+      "Oil the grill grates well to prevent sticking",
+      "Place salmon on the grill, skin-side up",
+      "Grill for 4-5 minutes until golden brown",
+      "Carefully flip and cook for another 3-4 minutes until done",
+      "Garnish with fresh parsley and serve with lemon wedges"
+    ]
   },
   {
     "id": 3,
-    "title": "Vegetable Stir Fry",
-    "summary": "A quick and healthy stir fry with mixed vegetables and soy sauce.",
-    "image": "https://placehold.co/400"
+    "title": "Homemade Margherita Pizza",
+    "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+    "summary": "Classic Neapolitan pizza with fresh mozzarella, tomatoes, and basil.",
+    "category": "Italian Pizza",
+    "prepTime": "2 hours",
+    "cookTime": "15 mins",
+    "servings": 2,
+    "description": "This authentic Margherita pizza brings the taste of Naples to your home. With a thin, crispy crust, sweet San Marzano tomatoes, fresh mozzarella, and aromatic basil, it is a testament to the beauty of simple, quality ingredients. The pizza is best cooked at high temperature to achieve that perfect balance of crispy and chewy texture that Neapolitan pizzas are famous for.",
+    "ingredients": [
+      "500g '00' flour or bread flour",
+      "300ml lukewarm water",
+      "7g active dry yeast",
+      "1 tsp salt",
+      "1 tbsp olive oil",
+      "400g San Marzano tomatoes",
+      "250g fresh mozzarella",
+      "Fresh basil leaves",
+      "Extra virgin olive oil for drizzling",
+      "Sea salt to taste"
+    ],
+    "instructions": [
+      "Mix flour and salt in a large bowl",
+      "Dissolve yeast in lukewarm water and let sit for 5 minutes",
+      "Make a well in flour and add yeast mixture and olive oil",
+      "Knead for 10-15 minutes until smooth and elastic",
+      "Let dough rise for 1-2 hours until doubled in size",
+      "Preheat oven to highest setting (ideally 500°F/260°C) with pizza stone",
+      "Divide dough in two and shape into thin rounds",
+      "Top with crushed tomatoes, torn mozzarella, and a drizzle of olive oil",
+      "Bake for 10-15 minutes until crust is golden and cheese is bubbly",
+      "Add fresh basil leaves and extra olive oil after baking"
+    ]
   }
 ]
