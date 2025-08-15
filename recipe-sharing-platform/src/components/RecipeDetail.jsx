@@ -49,7 +49,7 @@ function RecipeDetail() {
           alt={recipe.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+        <div className="absolute inset-0 bg-black opacity-75 flex items-end">
           <div className="p-4 sm:p-6 md:p-8 w-full">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
               {recipe.title}
