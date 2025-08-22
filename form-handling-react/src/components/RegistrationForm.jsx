@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { ErrorMessage, Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
 
 const RegistrationForm = () => {
   const [username, setUsername] = useState('');
@@ -8,26 +6,11 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  const RegistrationSchema = Yup.object().shape({
-    username: Yup.string()
-     .min(2, 'Too Short!')
-     .max(50, 'Too Long!')
-     .required('Required'),
-    email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string()
-     .min(8, 'Too Short!')
-     .required('Required'),
-  });
-
   return (
-    <Formik
-      initialValues={{
-        username: '',
-        email: '',
-        password: '',
-      }}
-      validationSchema={RegistrationSchema}
-      onSubmit={values => {
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+
         if (!username) {
           setErrors(prevErrors => ({ ...prevErrors, username: 'Required' }));
           return;
@@ -43,48 +26,50 @@ const RegistrationForm = () => {
           return;
         }
 
-        console.log(values);
+        console.log({ username, email, password });
       }}
     >
-      {({ errors, touched }) => (
-        <Form>
-          <div>
-            <label htmlFor="username">Username:</label>
-            <Field
-              type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={e => setUsername(e.target.value)}
-            />
-          </div>
-          <ErrorMessage name="username" component="div" className="error" />
-          <div>
-            <label htmlFor="email">Email:</label>
-            <Field
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </div>
-          <ErrorMessage name="email" component="div" className="error" />
-          <div>
-            <label htmlFor="password">Password:</label>
-            <Field
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </div>
-          <ErrorMessage name="password" component="div" className="error" />
-          <button type="submit">Register</button>
-        </Form>
+      <div>
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+        />
+      </div>
+      {errors.username && (
+        <div className="error">{errors.username}</div>
       )}
-    </Formik>
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+      </div>
+      {errors.email && (
+        <div className="error">{errors.email}</div>
+      )}
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+      </div>
+      {errors.password && (
+        <div className="error">{errors.password}</div>
+      )}
+      <button type="submit">Register</button>
+    </form>
   );
 };
 
