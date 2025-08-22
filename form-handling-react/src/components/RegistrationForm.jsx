@@ -6,6 +6,7 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
 
   const RegistrationSchema = Yup.object().shape({
     username: Yup.string()
@@ -27,6 +28,21 @@ const RegistrationForm = () => {
       }}
       validationSchema={RegistrationSchema}
       onSubmit={values => {
+        if (!username) {
+          setErrors(prevErrors => ({ ...prevErrors, username: 'Required' }));
+          return;
+        }
+
+        if (!email) {
+          setErrors(prevErrors => ({ ...prevErrors, email: 'Required' }));
+          return;
+        }
+
+        if (!password) {
+          setErrors(prevErrors => ({ ...prevErrors, password: 'Required' }));
+          return;
+        }
+
         console.log(values);
       }}
     >
