@@ -3,14 +3,9 @@ import * as Yup from 'yup';
 
 const FormikForm = () => {
   const RegistrationSchema = Yup.object().shape({
-    username: Yup.string()
-     .min(2, 'Too Short!')
-     .max(50, 'Too Long!')
-     .required('Required'),
+    username: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string()
-     .min(8, 'Too Short!')
-     .required('Required'),
+    password: Yup.string().required('Required'),
   });
 
   return (
