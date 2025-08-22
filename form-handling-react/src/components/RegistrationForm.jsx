@@ -3,6 +3,10 @@ import { ErrorMessage, Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 const RegistrationForm = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const RegistrationSchema = Yup.object().shape({
     username: Yup.string()
      .min(2, 'Too Short!')
@@ -34,6 +38,8 @@ const RegistrationForm = () => {
               type="text"
               id="username"
               name="username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
             />
           </div>
           <ErrorMessage name="username" component="div" className="error" />
@@ -43,6 +49,8 @@ const RegistrationForm = () => {
               type="email"
               id="email"
               name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
           <ErrorMessage name="email" component="div" className="error" />
@@ -52,6 +60,8 @@ const RegistrationForm = () => {
               type="password"
               id="password"
               name="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
           </div>
           <ErrorMessage name="password" component="div" className="error" />
