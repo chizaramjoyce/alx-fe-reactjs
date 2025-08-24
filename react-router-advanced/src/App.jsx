@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
 import Profile from './components/Profile'
-import ProfileDetails from './components/ProfileDetails'
-import ProfileSettings from './components/ProfileSettings'
 import UserProfile from './components/UserProfile'
 import Login from './components/Login'
 import ProtectedRoute from './components/ProtectedRoute'
+import Blog from './components/Blog'
+import BlogPost from './components/BlogPost'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 
 const Navigation = () => {
@@ -17,6 +17,9 @@ const Navigation = () => {
       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
         <li style={{ display: 'inline', marginRight: '1rem' }}>
           <Link to="/">Home</Link>
+        </li>
+        <li style={{ display: 'inline', marginRight: '1rem' }}>
+          <Link to="/blog">Blog</Link>
         </li>
         <li style={{ display: 'inline', marginRight: '1rem' }}>
           <Link to="/profile">Profile</Link>
@@ -48,6 +51,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
               <Route
                 path="/profile/*"
                 element={
