@@ -4,75 +4,49 @@ import '@testing-library/jest-dom';
 import TodoList from '../components/TodoList';
 
 describe('TodoList Component', () => {
-  const mockTodos = [
-    { id: 1, text: 'Learn React', completed: false },
-    { id: 2, text: 'Write tests', completed: true },
-    { id: 3, text: 'Build app', completed: false }
-  ];
-
-  const mockToggleTodo = jest.fn();
-  const mockDeleteTodo = jest.fn();
-
   beforeEach(() => {
-    // Clear mock function calls before each test
+    // Clear any previous renders
     jest.clearAllMocks();
   });
 
-  test('renders all todo items', () => {
-    render(
-      <TodoList
-        todos={mockTodos}
-        onToggleTodo={mockToggleTodo}
-        onDeleteTodo={mockDeleteTodo}
-      />
-    );
+  test('renders initial todo items', () => {
+    render(<TodoList />);
 
-    // Verify all todos are rendered
-    mockTodos.forEach(todo => {
-      expect(screen.getByText(todo.text)).toBeInTheDocument();
-    });
+    // Verify initial todos are rendered
+    expect(screen.getByText('Learn React')).toBeInTheDocument();
+    expect(screen.getByText('Build a Todo App')).toBeInTheDocument();
+    expect(screen.getByText('Practice React Hooks')).toBeInTheDocument();
   });
 
-  test('applies completed class to completed todos', () => {
-    render(
-      <TodoList
-        todos={mockTodos}
-        onToggleTodo={mockToggleTodo}
-        onDeleteTodo={mockDeleteTodo}
-      />
-    );
+  test('can toggle todo completion status', () => {
+    render(<TodoList />);
 
-    // Find the completed todo's parent li element
-    const completedTodo = screen.getByText('Write tests').closest('li');
-    expect(completedTodo).toHaveClass('completed');
+    // Find a todo item and its parent li
+    const todoText = screen.getByText('Learn React');
+    const todoItem = todoText.closest('li');
+    
+    // Initial state - not completed
+    expect(todoItem).not.toHaveClass('completed');
+    
+    // Click to toggle
+    fireEvent.click(todoText);
+    
+    // Should now be completed
+    expect(todoItem).toHaveClass('completed');
   });
 
-  test('calls onToggleTodo when a todo is clicked', () => {
-    render(
-      <TodoList
-        todos={mockTodos}
-        onToggleTodo={mockToggleTodo}
-        onDeleteTodo={mockDeleteTodo}
-      />
-    );
+  test('can delete a todo', () => {
+    render(<TodoList />);
 
-    // Click on a todo item
-    fireEvent.click(screen.getByText('Learn React'));
-    expect(mockToggleTodo).toHaveBeenCalledWith(1);
-  });
-
-  test('calls onDeleteTodo when delete button is clicked', () => {
-    render(
-      <TodoList
-        todos={mockTodos}
-        onToggleTodo={mockToggleTodo}
-        onDeleteTodo={mockDeleteTodo}
-      />
-    );
-
-    // Find all delete buttons and click the first one
+    // Verify todo exists initially
+    const todoText = 'Learn React';
+    expect(screen.getByText(todoText)).toBeInTheDocument();
+    
+    // Find and click delete button for this todo
     const deleteButtons = screen.getAllByText('Delete');
     fireEvent.click(deleteButtons[0]);
-    expect(mockDeleteTodo).toHaveBeenCalledWith(1);
+    
+    // Verify todo is removed
+    expect(screen.queryByText(todoText)).not.toBeInTheDocument();
   });
 });
