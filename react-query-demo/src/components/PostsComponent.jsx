@@ -14,6 +14,11 @@ function PostsComponent() {
     staleTime: 300000, // Data will be considered fresh for 5 minutes
     cacheTime: 3600000, // Cache will be garbage collected after 1 hour
     retry: 3, // Will retry failed requests 3 times
+    refetchOnWindowFocus: true, // Automatically refetch when window regains focus
+    keepPreviousData: true, // Keep showing previous data while fetching new data
+    onFocus: () => {
+      console.log('Window focused - checking for updates');
+    }
   });
 
   if (isLoading) {
