@@ -10,7 +10,7 @@ const fetchPosts = async () => {
 };
 
 function PostsComponent() {
-  const { data: posts, isLoading, error, refetch, isFetching } = useQuery('posts', fetchPosts, {
+  const { data: posts, isLoading, isError, error, refetch, isFetching } = useQuery('posts', fetchPosts, {
     staleTime: 300000, // Data will be considered fresh for 5 minutes
     cacheTime: 3600000, // Cache will be garbage collected after 1 hour
     retry: 3, // Will retry failed requests 3 times
@@ -20,7 +20,7 @@ function PostsComponent() {
     return <div>Loading posts...</div>;
   }
 
-  if (error) {
+  if (isError) {
     return <div>Error fetching posts: {error.message}</div>;
   }
 
