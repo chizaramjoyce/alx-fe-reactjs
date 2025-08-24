@@ -49,16 +49,13 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route
-                path="/profile"
+                path="/profile/*"
                 element={
                   <ProtectedRoute>
                     <Profile />
                   </ProtectedRoute>
                 }
-              >
-                <Route path="details" element={<ProfileDetails />} />
-                <Route path="settings" element={<ProfileSettings />} />
-              </Route>
+              />
               <Route
                 path="/users/:userId"
                 element={
